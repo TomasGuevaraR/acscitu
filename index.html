@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acsitu</title>
+    <meta name="description"
+        content="Página web de la Asociación Cristiana para el Servicio hacia la Comunidad y la Iglesia Evangélica Templo Unido.">
+    <!-- Tailwind CSS para diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para Tipografía Limpia -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ScrollReveal para Animaciones Profesionales -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDarkBlue: '#0F2C59',
+                        brandLightBlue: '#38E54D',
+                        brandSky: '#74B9FF',
+                        brandRed: '#D63031'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1e3a8a 50%, #74B9FF 100%);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+        }
+
+        .accordion-content.open {
+            max-height: 2000px;
+            /* Suficiente espacio para el texto largo */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- NAV BAR (RESPONSIVO) -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-church text-3xl text-blue-900"></i>
+                    <div>
+                        <span class="font-bold text-lg text-blue-900 block leading-tight">ACSCITU</span>
+                        <span class="text-xs text-slate-500 block">NIT: 900139275-1</span>
+                    </div>
+                    <div class="flex justify-center gap-8 mb-4">
+                        <img src="img/logoacsitu.png" alt="Logo ACSitu" class="h-16 object-contain">
+                        <img src="img/logoiglesia.png" alt="Logo Iglesia" class="h-16 object-contain">
+                        <img src="img/logocdi.png" alt="Logo CDI" class="h-16 object-contain">
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                    <a href="#inicio" class="hover:text-blue-900 transition-colors">Inicio</a>
+                    <a href="#introduccion" class="hover:text-blue-900 transition-colors">Introducción</a>
+                    <a href="#familias" class="hover:text-blue-900 transition-colors">Familias</a>
+                    <a href="#staff" class="hover:text-blue-900 transition-colors">Staff y Liderazgo</a>
+                    <a href="#jovenes" class="hover:text-blue-900 transition-colors">Juventud</a>
+                    <a href="#contacto" class="hover:text-blue-900 transition-colors">Contacto</a>
+                </div>
+                <!-- Botón de Menú Móvil -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-600 focus:outline-none" type="button" aria-label="button">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 pt-2 pb-4 space-y-2 shadow-lg">
+            <a href="#inicio" class="block py-2 text-slate-700 hover:bg-slate-100 px-2 rounded">Inicio</a>
+            <a href="#introduccion" class="block py-2 text-slate-700 hover:bg-slate-100 px-2 rounded">Introducción</a>
+            <a href="#familias" class="block py-2 text-slate-700 hover:bg-slate-100 px-2 rounded">Familias</a>
+            <a href="#staff" class="block py-2 text-slate-700 hover:bg-slate-100 px-2 rounded">Staff y Liderazgo</a>
+            <a href="#jovenes" class="block py-2 text-slate-700 hover:bg-slate-100 px-2 rounded">Juventud</a>
+            <a href="#contacto" class="block py-2 text-slate-700 hover:bg-slate-100 px-2 rounded">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO / BIENVENIDA -->
+    <header id="inicio" class="hero-bg pt-32 pb-24 md:pt-48 md:pb-40 text-white relative px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 reveal-left">
+                <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight leading-tight">
+                    Asociación Cristiana para el Servicio hacia la Comunidad y la Iglesia Evangélica Templo Unido
+                </h1>
+                <div class="border-l-4 border-brandSky pl-4 space-y-1">
+                    <p class="text-lg font-semibold text-sky-200">Centro de Desarrollo Integral Dejando Huellas CO0626
+                    </p>
+                    <p class="text-base text-slate-300">Iglesia Evangélica Cristiana Unido AIEC</p>
+                    <p class="text-xs text-slate-400 font-mono">NIT: 900139275-1</p>
+                </div>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#introduccion"
+                        class="bg-white text-blue-900 font-bold px-8 py-3.5 rounded-lg shadow-lg hover:bg-sky-100 transition-all transform hover:-translate-y-1">
+                        Ver Informe Integral
+                    </a>
+                    <a href="#contacto"
+                        class="border-2 border-white/80 text-white font-bold px-8 py-3 rounded-lg hover:bg-white/10 transition-all">
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center reveal-right">
+                <div
+                    class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden w-full max-w-md">
+                    <img src="img/portada.png" alt="Portada"
+                        class="rounded-xl w-full object-cover shadow-inner hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: ENFOQUE ESTRATÉGICO / IDENTIDAD -->
+    <section id="nosotros" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+            class="grid md:grid-cols-2 gap-12 bg-white rounded-3xl p-8 md:p-16 shadow-xl border border-slate-100 reveal-bottom">
+            <div class="space-y-4 border-b md:border-b-0 md:border-r border-slate-100 pb-8 md:pb-0 md:pr-8">
+                <div
+                    class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-900 text-2xl mb-4">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-blue-950">Nuestra Visión</h3>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    Ser una iglesia equilibrada integralmente conforme al propósito de Dios.
+                </p>
+            </div>
+            <div class="space-y-4 md:pl-8">
+                <div
+                    class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center text-red-600 text-2xl mb-4">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-blue-950">Nuestra Misión</h3>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    Somos una iglesia que anuncia el Evangelio de forma integral a todas las generaciones para que vivan
+                    en adoración, reflejado en el amor de Dios e impactando a las comunidades.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INTRODUCCIÓN -->
+    <section id="introduccion" class="py-12 bg-blue-50 border-t border-b border-blue-100">
+        <div class="max-w-4xl mx-auto px-4 text-center reveal-bottom">
+            <span
+                class="text-blue-800 font-bold uppercase tracking-widest text-xs px-3 py-1 bg-blue-100 rounded-full">1.
+                Introducción</span>
+            <h2 class="text-3xl font-extrabold text-blue-950 mt-3">Consolidado de Actividades Colectivas</h2>
+            <p class="text-slate-700 mt-4 text-lg leading-relaxed text-justify md:text-center">
+                El presente informe consolida las actividades desarrolladas durante el **segundo semestre del año
+                2025**, organizadas cronológicamente y por líneas de acción estratégicas, en articulación entre la
+                iglesia, con énfasis en protección, acompañamiento integral y fortalecimiento comunitario.
+            </p>
+        </div>
+    </section>
+
+    <!-- LÍNEA DE ACCIÓN 1: PADRES Y FAMILIAS -->
+    <section id="familias" class="py-20 bg-slate-100/60 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-bottom">
+                <span class="text-red-500 font-bold uppercase tracking-widest text-sm">Línea de Acción 1</span>
+                <h2 class="text-4xl font-extrabold text-blue-950 mt-2">Padres y Familias</h2>
+                <p class="text-slate-600 mt-4">Fortalecimiento familiar, prevención y acompañamiento integral en el
+                    hogar.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Actividad 1.1 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200/60 flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="h-52 bg-slate-200 overflow-hidden relative">
+                            <img src="img/imagen1.png" alt="Prevención de enfermedades por vectores"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">30
+                                    Julio 2025</span>
+                                <span class="text-xs text-slate-400 font-medium">Ref: 2.1</span>
+                            </div>
+                            <h4 class="font-bold text-xl text-blue-950">Escuela de Padres - Prevención de Vectores</h4>
+
+                            <!-- Botón Desplegable -->
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-sm font-semibold text-blue-900 hover:text-blue-700 focus:outline-none pt-2 border-t border-slate-100"
+                                type="button">
+                                <span>Ver Información Completa</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"></i>
+                            </button>
+
+                            <!-- Contenido del Desplegable -->
+                            <div class="accordion-content text-sm text-slate-600 space-y-2 text-justify">
+                                <p><strong>Objetivo:</strong> Sensibilizar a las familias sobre la prevención de
+                                    enfermedades transmitidas por vectores.</p>
+                                <p><strong>Descripción:</strong> Jornada formativa desarrollada con el apoyo y guía de
+                                    la Secretaría de Salud.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actividad 1.2 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200/60 flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-2 h-52 bg-slate-200">
+                            <img src="img/crianza1.png" alt="Crianza con ternura 1"
+                                class="w-full h-full object-cover border-r border-white">
+                            <img src="img/crianza2.png" alt="Crianza con ternura 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">05
+                                    Septiembre 2025</span>
+                                <span class="text-xs text-slate-400 font-medium">Ref: 2.2</span>
+                            </div>
+                            <h4 class="font-bold text-xl text-blue-950">Escuela de Padres - Crianza con Ternura</h4>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-sm font-semibold text-blue-900 hover:text-blue-700 focus:outline-none pt-2 border-t border-slate-100"
+                                type="button">
+                                <span>Ver Información Completa</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"></i>
+                            </button>
+
+                            <div class="accordion-content text-sm text-slate-600 space-y-2 text-justify">
+                                <p><strong>Objetivo:</strong> Orientar a padres de nuevos ingresos en prácticas de
+                                    crianza basadas en el buen trato.</p>
+                                <p><strong>Descripción:</strong> Se impartió formalmente la primera lección del programa
+                                    estructurado "Crianza con ternura" desarrollado por la institución internacional
+                                    Claves Uruguay.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actividad 1.3 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200/60 flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-2 h-52 bg-slate-200">
+                            <img src="img/imagen2.png" alt="Evaluación Caspio 1"
+                                class="w-full h-full object-cover border-r border-white">
+                            <img src="img/imagen3.png" alt="Evaluación Caspio 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">06
+                                    Diciembre 2025</span>
+                                <span class="text-xs text-slate-400 font-medium">Ref: 2.3</span>
+                            </div>
+                            <h4 class="font-bold text-xl text-blue-950">Protección, Buen Trato y Evaluación</h4>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-sm font-semibold text-blue-900 hover:text-blue-700 focus:outline-none pt-2 border-t border-slate-100"
+                                type="button">
+                                <span>Ver Información Completa</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"></i>
+                            </button>
+
+                            <div class="accordion-content text-sm text-slate-600 space-y-2 text-justify">
+                                <p><strong>Objetivo:</strong> Fortalecer prácticas de protección y buen trato hacia los
+                                    niños. También, el apoyo de los padres en apuntar a las prioridades de las
+                                    necesidades que tienen en común los participantes de acuerdo a las edades.</p>
+                                <p><strong>Descripción:</strong> Espacio formativo orientado a la prevención de la
+                                    violencia y la corresponsabilidad familiar mediante la socialización de resultados
+                                    analíticos de la Evaluación Caspio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LÍNEA DE ACCIÓN 2: STAFF, EDUCADORES Y LIDERAZGO -->
+    <section id="staff" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-bottom">
+            <span class="text-blue-900 font-bold uppercase tracking-widest text-sm">Línea de Acción 2</span>
+            <h2 class="text-4xl font-extrabold text-blue-950 mt-2">Staff, Educadores y Liderazgo</h2>
+            <p class="text-slate-600 mt-4">Fortalecimiento de la cultura institucional, capacitación continua y
+                motivacional del equipo ministerial.</p>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Fila 1: Actividad Incentivo -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal-bottom">
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-red-500">24 Agosto 2025</span>
+                        <span class="text-xs font-mono text-slate-400">Ref: 3.1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900">Actividad de Incentivo a Educadores</h3>
+                    <p class="text-slate-600 text-sm">Fortalecer la motivación y vocación del equipo educativo a través
+                        de una jornada reflexiva espiritual.</p>
+                    <button
+                        class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-blue-900 hover:text-blue-700 focus:outline-none pt-2 border-t"
+                        type="button">
+                        <span>Ver Textos Bíblicos y Detalles</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content text-xs text-slate-600 space-y-2">
+                        <p><strong>Descripción:</strong> Jornada de integración y taller reflexivo que giró en torno a
+                            los textos bíblicos corporativos: <em>2 Corintios 4:1, 2 Corintios 4:7 y 2 Corintios
+                                4:16-18</em>.</p>
+                        <ul class="list-disc ml-5 text-sm text-slate-600">
+                            <li>Enseñamos por misericordia.</li>
+                            <li>Perseveramos sin desfallecer.</li>
+                            <li>Servimos mostrando a Cristo como Señor.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-2 h-48">
+                    <img src="img/imagen4.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 1">
+                    <img src="img/imagen5.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 2">
+                    <img src="img/imagen6.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 3">
+                </div>
+            </div>
+
+            <!-- Fila 2: Formación Protección -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal-bottom">
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-red-500">14 Noviembre 2025</span>
+                        <span class="text-xs font-mono text-slate-400">Ref: 3.2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900">Formación en Protección y Salvaguarda</h3>
+                    <p class="text-slate-600 text-sm">Fortalecer la cultura institucional de protección...</p>
+                    <button
+                        class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-blue-900 hover:text-blue-700 focus:outline-none pt-2 border-t"
+                        type="button">
+                        <span>Ver Ejes de Formación</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content text-xs text-slate-600 space-y-1">
+                        <p><strong>Descripción:</strong> Espacio de reflexión en torno al texto bíblico 1 Corintios
+                            15:58 e integración.<br>• Permanecer firmes en el llamado<br>• Seguir creciendo, no solo en
+                            habilidades, sino en intimidad con Él<br>• Renovar el gozo del servicio, recordando para
+                            Quién lo hacemos.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-2 h-48">
+                    <img src="img/imagen7.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 4">
+                    <img src="img/imagen8.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 5">
+                    <img src="img/imagen9.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 6">
+                </div>
+            </div>
+
+            <!-- Fila 3: Fin de año -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal-bottom">
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-red-500">17 Diciembre 2025</span>
+                        <span class="text-xs font-mono text-slate-400">Ref: 3.4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900">Actividad de Fin de Año - Staff</h3>
+                    <p class="text-slate-600 text-sm">Cierre anual ministerial, agradecimiento e integración del equipo
+                        de trabajo.</p>
+                    <button
+                        class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-blue-900 hover:text-blue-700 focus:outline-none pt-2 border-t"
+                        type="button">
+                        <span>Ver Pilares de Reflexión</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content text-xs text-slate-600 space-y-2">
+                        <ul class="list-disc ml-5 text-sm text-slate-600">
+                            <li><strong>Descripción:</strong> Espacio de reflexión en torno al texto bíblico 1 Corintios
+                                15:58 e integración.</li>
+                            <li>Permanecer firmes en el llamado</li>
+                            <li>Seguir creciendo, no solo en habilidades, sino en intimidad con Él</li>
+                            <li>Renovar el gozo del servicio, recordando para Quién lo hacemos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-2 h-48">
+                    <img src="img/imagen10.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 7">
+                    <img src="img/imagen11.png" class="rounded-lg w-full h-full object-cover shadow" alt="Evidencia 8">
+                    <!-- placeholder for third column if needed -->
+                </div>
+            </div>
+
+            <!-- 3.3 COMPONENTE AVANZADO: PLANIFICACIÓN ESTRATÉGICA PCA & COMPASSION -->
+            <div
+                class="bg-blue-950 text-white rounded-3xl p-6 md:p-10 shadow-xl grid md:grid-cols-3 gap-8 items-center reveal-bottom">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <span
+                            class="text-sky-300 font-bold uppercase text-xs tracking-wider bg-white/10 px-2.5 py-1 rounded">Ref:
+                            3.3</span>
+                        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Planificación
+                            Estratégica
+                            Completa</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold leading-tight text-white">Desarrollo de Procesos PCA con
+                        Enfoque Compassion</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed text-justify">
+                        A través de la articulación del equipo de liderazgo de la Iglesia Templo Unido y herramientas
+                        analíticas como baterías en Tablet y herramientas espejo, se ha estructurado una proyección de
+                        sostenibilidad ministerial a 10 años, priorizando la reducción de brechas críticas.
+                    </p>
+
+                    <!-- Botón de despliegue interno para el texto completo institucional -->
+                    <button
+                        class="accordion-btn bg-white/10 hover:bg-white/20 text-sky-300 font-semibold text-xs py-2.5 px-4 rounded-lg flex items-center space-x-2 transition-all"
+                        type="button">
+                        <span>Desplegar Informe de Planificación (Fechas y Metas Trineales)</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                    </button>
+
+                    <!-- Bloque de datos completos desplegables del PCA -->
+                    <div
+                        class="accordion-content text-xs text-slate-300 space-y-4 bg-black/20 rounded-xl p-0 transition-all text-justify">
+                        <div class="border-b border-white/10 pb-3">
+                            <h4 class="text-sky-400 font-bold mb-1">Fase 1: Diagnóstico y Tablet - 10 de Septiembre 2025
+                            </h4>
+                            <p>Durante el proceso de análisis se revisaron los resultados obtenidos a través de la
+                                batería Tablet, lo que permitió identificar las principales necesidades de los
+                                participantes en los cinco TOP priorizados: Numeracy, Vision for Change &amp;
+                                Contribution,
+                                General Health, NEET/TVET &amp; Income Generation y Healthy Self-Identity. Estos datos
+                                ofrecieron una visión clara de brechas en habilidades básicas, salud integral,
+                                proyección de vida, identidad personal y oportunidades educativas y económicas.</p>
+                            <br>
+                            <p> Posteriormente, se compararon estas necesidades con el árbol del problema, identificando
+                                coincidencias clave. A partir de este ejercicio se priorizaron tres necesidades
+                                principales, considerando su impacto transversal, urgencia y potencial de transformación
+                                en la vida de niños, adolescentes y jóvenes. Se determinó mantener las necesidades ya
+                                establecidas en el árbol, ajustando su enfoque según la evidencia levantada.</p>
+                            <br>
+                            <p>Con base en lo anterior, se formularon objetivos específicos por TOP, definidos según la
+                                necesidad prioritaria y el grupo etario, asegurando coherencia entre diagnóstico,
+                                objetivos e intervenciones. Asimismo, se seleccionaron las intervenciones más
+                                apropiadas, combinando programas existentes y posibles adaptaciones locales, tales como
+                                fortalecimiento en lectoescritura y matemáticas, habilidades para la vida, salud
+                                preventiva, generación de ingresos y acompañamiento psicosocial.</p>
+                            <p>En el ámbito de protección, se analizó la propuesta existente y se consideró la
+                                pertinencia de integrar el enfoque de Compassion, valorando su énfasis en el cuidado
+                                integral, la dignidad y la respuesta contextualizada a las necesidades de la niñez y
+                                adolescencia.</p>
+                            <br>
+                            <p>Finalmente, el proceso se concibió como un ejercicio participativo, orientado a escuchar,
+                                dialogar y construir acuerdos, fortaleciendo la toma de decisiones informadas y
+                                alineadas con la realidad de los participantes y los objetivos del programa</p>
+                        </div>
+
+                        <div class="border-b border-white/10 pb-3">
+                            <h4 class="text-sky-400 font-bold mb-1">Fase 2: Herramienta Espejo y Sostenibilidad - 25 de
+                                Septiembre 2025</h4>
+                            <p>El equipo de liderazgo de la Iglesia Templo Unido, junto con los actores clave del
+                                programa, desarrolló de manera participativa y colaborativa la reflexión de capacidades
+                                utilizando la herramienta espejo. Este ejercicio permitió analizar el estado de la
+                                iglesia antes de la asociación, la situación actual y la proyección de sostenibilidad a
+                                10 años, evaluando seis capacidades fundamentales para el fortalecimiento del ministerio
+                                infantil y juvenil.</p>
+                            <br>
+                            <p>A partir del análisis conjunto, se identificaron avances significativos en áreas como
+                                visión bíblica, liderazgo, compromiso familiar y alianzas, así como brechas prioritarias
+                                en movilización de recursos, formación integral del liderazgo y participación familiar
+                                sostenida. Con base en esta reflexión, el equipo seleccionó tres capacidades clave (una
+                                básica y dos opcionales) y definió objetivos claros y medibles, alineados con la
+                                realidad de la iglesia y la sostenibilidad del programa.</p>
+                            <br>
+                            <p>De manera conjunta se diseñó un plan de acción, estableciendo intervenciones concretas,
+                                responsables y roles compartidos entre la iglesia, Compassion y otros aliados
+                                estratégicos. Este proceso fortaleció la corresponsabilidad, la visión común y el
+                                compromiso del equipo, sentando bases sólidas para avanzar durante el año en el
+                                desarrollo de capacidades y en el impacto integral en la niñez, adolescencia y juventud.
+                            </p>
+
+                        </div>
+
+                        <div class="pb-2">
+                            <h4 class="text-sky-400 font-bold mb-1">Fase 3: Aprobación de Intervenciones FCP 626 - 16 de
+                                Octubre 2025</h4>
+                            <p class="mb-2 font-semibold text-white">Se seleccionaron formalmente las siguientes cuatro
+                                intervenciones estratégicas:</p>
+                            <div class="space-y-2 bg-blue-900/50 p-3 rounded-lg border border-white/10">
+                                <p>🔹 <strong>Detective T.T. (Protección Infantil - Oct 2026):</strong> "En los próximos
+                                    3
+                                    años, lograremos alcanzar en un 80% de los participantes de 9 a 15 años aprendan a
+                                    proteger su privacidad, denunciar riesgos y usar internet de manera responsable y
+                                    segura."</p>
+                                <p>🔹 <strong>Prevención del Consumo de SPA (Salud Física - Julio 2026):</strong>
+                                    "Prevenir
+                                    el uso abusivo y nocivo de sustancias ilegales en adolescentes de 12 a 18 años, a
+                                    través
+                                    de un programa integral durante 3 años que combine talleres psicoeducativos,
+                                    actividades
+                                    deportivas y artísticas con el fin de aumentar en un 80% las conductas de
+                                    autocuidado,
+                                    según evaluaciones pre y post intervención."</p>
+                                <p>🔹 <strong>Fortaleciendo mis habilidades de Lectoescritura y Matemáticas
+                                        (Autosuficiencia
+                                        / Numeracy - Febrero 2027):</strong> "Fortalecer las competencias en conceptos
+                                    matemáticos básicos (ubicación, formas, tamaños, números y operaciones) en al menos
+                                    el
+                                    80% de adolescentes de 12 a 18 años que presentan necesidades altas, mediante una
+                                    estrategia de acompañamiento académico de acuerdo a la edad y grado escolar."</p>
+                                <p>🔹 <strong>Construyendo mis sueños Generación Excelente (Visión para el Cambio -
+                                        Febrero
+                                        2026):</strong> "Reducir en un 80% la percepción negativa de sí mismos en
+                                    adolescentes de 15 a 18 años en un período de 3 años, mediante un programa integral
+                                    de
+                                    fortalecimiento de identidad, resiliencia y autoestima."</p>
+                            </div>
+                            <h4 class="text-sky-400 font-bold mb-2">Objetivos Estratégicos</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed text-justify">En los próximos 3 años,
+                                lograremos alcanzar en un 80% de los participantes de 9 a 15 años aprendan a proteger su
+                                privacidad, denunciar riesgos y usar internet de manera responsable y segura.</p>
+                            <br>
+                            <p class="text-slate-300 text-sm leading-relaxed text-justify">Reducir en un 80% la
+                                percepción negativa de sí mismos en adolescentes de 15 a 18 años en un período de 3
+                                años, mediante un programa integral de fortalecimiento de identidad, resiliencia y auto
+                                estima.</p>
+                            <br>
+                            <p class="text-slate-300 text-sm leading-relaxed text-justify">Fortalecer las competencias
+                                en conceptos matemáticos básicos (ubicación, formas, tamaños, números y operaciones) en
+                                al menos el 80% de adolescentes de 12 a 18 años que presentan necesidades altas,
+                                mediante una estrategia de acompañamientos académico de acuerdo a la edad y grado
+                                escolar.</p>
+                            <br>
+                            <p class="text-slate-300 text-sm leading-relaxed text-justify">Prevenir el uso abusivo y
+                                nocivo de sustancias ilegales en adolescentes de 12 a 18 años, a través de un programa
+                                integral durante 3 años que combine talleres psicoeducativos, actividades deportivas y
+                                artísticas con el fin de aumentar en un 80% las conductas de autocuidado, según
+                                evaluaciones pre y post intervención.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Columna lateral del bloque azul -->
+                <div class="space-y-4">
+                    <div class="bg-white/10 p-2 rounded-xl border border-white/10 relative group">
+                        <img src="img/imagen12.png" alt="Planificación de Equipo"
+                            class="rounded-lg w-full h-44 object-cover">
+                        <span class="absolute bottom-3 right-3 bg-black/70 text-[10px] px-1.5 py-0.5 rounded">Img 12:
+                            Planificación PCA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LÍNEA DE ACCIÓN 3: NIÑOS, ADOLESCENTES Y JÓVENES -->
+    <section id="jovenes" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-bottom">
+                <span class="text-sky-400 font-bold uppercase tracking-widest text-sm">Línea de Acción 3</span>
+                <h2 class="text-4xl font-extrabold mt-2 text-white">Niños, Adolescentes y Jóvenes</h2>
+                <p class="text-slate-400 mt-4">Cronograma e informes detallados de las actividades lúdicas, espirituales
+                    y formativas de desarrollo integral.</p>
+            </div>
+
+            <!-- Grilla Principal de Actividades de la Juventud -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 4.1 Sociedad Juvenil -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="h-48 relative"><img src="img/imagen13.png" alt="Ministerio Juvenil"
+                                class="w-full h-full object-cover"></div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.1 | Sábados (Julio -
+                                Diciembre)</span>
+                            <h4 class="font-bold text-xl text-white">Trabajo Articulado Ministerio Juvenil</h4>
+                            <p class="text-xs text-slate-400">Desarrollo temático integral mensual y avance continuo del
+                                CIV de SPA abordado de manera mensual.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-400 hover:text-sky-300 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Temario por Meses</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content text-xs text-slate-300 bg-slate-900/40 p-0 rounded space-y-1">
+                                <p>🗓️ <strong>Julio:</strong> Servicio</p>
+                                <p>🗓️ <strong>Agosto:</strong> Evangelismo</p>
+                                <p>🗓️ <strong>Septiembre:</strong> Adoración</p>
+                                <p>🗓️ <strong>Octubre:</strong> Discipulado</p>
+                                <p>🗓️ <strong>Noviembre:</strong> Compañerismo</p>
+                                <p>🗓️ <strong>Diciembre:</strong> CIV de Spa - Vínculos Sanos y Emociones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.2 Día de la Biblia -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-3 h-48 bg-slate-700">
+                            <img src="img/imagen14.png" alt="Biblia 14" class="w-full h-full object-cover">
+                            <img src="img/imagen15.png" alt="Biblia 15" class="w-full h-full object-cover">
+                            <img src="img/imagen16.png" alt="Biblia 16" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.2 | 30 de Octubre 2025</span>
+                            <h4 class="font-bold text-xl text-white">Celebración del Día de la Biblia</h4>
+                            <p class="text-xs text-slate-400">Promoción activa del valor de las Escrituras Sagradas y
+                                potenciación de habilidades al servicio de Dios.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-400 hover:text-sky-300 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Actividades Realizadas</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content text-xs text-slate-300 space-y-1">
+                                <p><strong>Descripción:</strong> Se realizó una preparación previa exhaustiva con los
+                                    participantes para la ejecución en la congregación de reflexiones bíblicas
+                                    estructuradas, coplas, muestras artísticas de danza y dinámicas de preguntas y
+                                    respuestas basadas en la palabra de Dios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.3 Campamento -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-3 h-48 bg-slate-700">
+                            <img src="img/imagen17.png" alt="Campamento 17" class="w-full h-full object-cover">
+                            <img src="img/imagen18.png" alt="Campamento 18" class="w-full h-full object-cover">
+                            <img src="img/imagen19.png" alt="Campamento 19" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.3 | 8 y 9 de Noviembre
+                                2025</span>
+                            <h4 class="font-bold text-xl text-white">Campamento: Buscando el Corazón de Dios</h4>
+                            <p class="text-xs text-slate-400">Encuentro de inmersión para adolescentes enfocado
+                                sólidamente en el fortalecimiento para la toma asertiva de decisiones.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-400 hover:text-sky-300 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Descripción General</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content text-xs text-slate-300 space-y-1">
+                                <p><strong>Descripción:</strong> Ejecución de talleres psicoeducativos y espirituales
+                                    dinámicos, fogatas de reflexión identitaria, dinámicas grupales y actividades
+                                    formativas de campo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.4 Jornada Cierre Niños (9 a 11) -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-3 h-48 bg-slate-700">
+                            <img src="img/imagen20.png" alt="Niños 20" class="w-full h-full object-cover">
+                            <img src="img/imagen21.png" alt="Niños 21" class="w-full h-full object-cover">
+                            <img src="img/imagen22.png" alt="Niños 22" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.4 (A) | 27 de Noviembre
+                                2025</span>
+                            <h4 class="font-bold text-xl text-white">Jornada de Cierre (Niños 9 a 11 Años)</h4>
+                            <p class="text-xs text-slate-400">Talleres preventivos, recreación formativa y sano
+                                esparcimiento en la Finca Villa Zayra.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-400 hover:text-sky-300 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Informe Completo de Gestión</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div
+                                class="accordion-content text-xs text-slate-300 space-y-2 bg-slate-900 p-3 rounded-lg text-justify">
+                                <p><strong>Responsables:</strong> Maestros del turno de la mañana.</p>
+                                <p><strong>📌 Talleres Mañana:</strong></p>
+                                <ul class="list-disc pl-3 space-y-0.5 text-slate-400">
+                                    <li>M. Kelinyer: "Yo me cuido" (Autocuidado e integridad).</li>
+                                    <li>Prof. Enoc: "No a las SPA" (Prevención consciente).</li>
+                                    <li>Seño Tania: "Salud Mental" (Cuidado y balance emocional).</li>
+                                    <li>Seño Erika: "Las Emociones" (Manejo e identificación).</li>
+                                </ul>
+                                <p><strong>🍔 Alimentación:</strong> Merienda AM (Empanada con jugo), Almuerzo (Arroz,
+                                    carne asada, ensalada, jugo) y Merienda PM (Helado).</p>
+                                <p><strong>⚽ Actividades PM:</strong> Uso de piscina, recreación libre, torneos de
+                                    fútbol por géneros y elaboración artesanal de manualidad navideña (vela).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.4 (B) Actividad Fin de Año (6 a 8) -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-3 h-48 bg-slate-700">
+                            <img src="img/imagen23.png" alt="Niños 23" class="w-full h-full object-cover">
+                            <img src="img/imagen24.png" alt="Niños 24" class="w-full h-full object-cover">
+                            <img src="img/imagen25.png" alt="Niños 25" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.4 (B) | 6 de Diciembre
+                                2025</span>
+                            <h4 class="font-bold text-xl text-white">Actividad de Fin de Año (6 a 8 Años)</h4>
+                            <p class="text-xs text-slate-400">Desarrollo de dinámicas recreativas infantiles con sólido
+                                enfoque espiritual y en valores fundamentales.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-400 hover:text-sky-300 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Descripción Especial</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content text-xs text-slate-300 space-y-1">
+                                <p><strong>Descripción:</strong> Jornada de actividades lúdicas dirigidas por el cuerpo
+                                    especializado de la Policía de Infancia y Adolescencia, acompañadas por un tiempo de
+                                    reflexión bíblica pastoral y pintucaritas interactivo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.5 Entrega Biblias y Regalos -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-4 h-48 bg-slate-700">
+                            <img src="img/imagen26.png" alt="Regalos 26" class="w-full h-full object-cover">
+                            <img src="img/imagen27.png" alt="Regalos 27" class="w-full h-full object-cover">
+                            <img src="img/imagen28.png" alt="Regalos 28" class="w-full h-full object-cover">
+                            <img src="img/imagen29.png" alt="Regalos 09" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.5 | Sábado 6 de Diciembre
+                                2025</span>
+                            <h4 class="font-bold text-xl text-white">Entrega de Biblias y Regalos Navideños</h4>
+                            <p class="text-xs text-slate-400">Fortalecimiento formal de la vida espiritual en el núcleo
+                                del hogar con 25 nuevos participantes registrados.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-400 hover:text-sky-300 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Informe Específico de Entrega</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div
+                                class="accordion-content text-xs text-slate-300 space-y-2 bg-slate-900 p-3 rounded-lg text-justify">
+                                <p><strong>Desarrollo:</strong> Oración inicial, espacio de cantos alegres y motivación
+                                    directa a los padres sobre la importancia crítica de leer la Biblia a sus hijos para
+                                    blindar los valores cristianos en el hogar.</p>
+                                <p><strong>Compromiso:</strong> Diálogo formal con los acudientes para enfatizar el
+                                    compromiso de asistencia continua.</p>
+                                <p><strong>Menú:</strong> Trocitos de pechuga de pollo frito, papas a la francesa y
+                                    jugo.</p>
+                                <p><strong>Obsequios:</strong> Biblias individuales más juguetes (muñecas y planchas
+                                    para niñas; carros y balones para niños).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.6 Quinceañeras -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="grid grid-cols-3 h-48 bg-slate-700">
+                            <img src="img/imagen30.png" alt="Quinceañeras 30" class="w-full h-full object-cover">
+                            <img src="img/imagen32.png" alt="Quinceañeras 32" class="w-full h-full object-cover">
+                            <img src="img/imagen33.png" alt="Quinceañeras 33" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.6 | 11 de Diciembre
+                                2025</span>
+                            <h4 class="font-bold text-xl text-white">Celebración Chicas de 15 Años</h4>
+                            <p class="text-xs text-slate-400">Gala y afirmación de identidad de las adolescentes
+                                efectuada de forma satisfactoria en el Hotel Baroca.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-400 hover:text-sky-300 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Protocolo e Informe</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div
+                                class="accordion-content text-xs text-slate-300 space-y-2 bg-slate-900 p-3 rounded-lg text-justify">
+                                <p><strong>Objetivo:</strong> Celebrar la vida de las adolescentes, fortaleciendo fe,
+                                    identidad y proyección.</p>
+                                <p><strong>Estructura del Evento:</strong></p>
+                                <ul class="list-disc pl-3 space-y-0.5 text-slate-400">
+                                    <li>Cena especial de celebración.</li>
+                                    <li>Reflexión espiritual sobre la fidelidad divina (Infancia, Presente, Futuro).
+                                    </li>
+                                    <li>Entrega de la <em>Caja de los Recuerdos</em> (foto de infancia, versículo rhema
+                                        y valor asignado).</li>
+                                    <li><strong>Caminata simbólica "Niñez - Presente - Futuro":</strong> cada chica
+                                        verbalizó un recuerdo íntimo, una virtud actual y su meta puesta en las manos de
+                                        Dios.</li>
+                                    <li>Brindis de cierre y bendición.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.7 Cena Jóvenes -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg flex flex-col justify-between reveal-bottom">
+                    <div>
+                        <div class="h-48 bg-slate-700 relative">
+                            <!-- Malla de cierre 34 a 37 en la cabecera del card -->
+                            <div class="grid grid-cols-4 h-full">
+                                <img src="img/imagen34.png" alt="Juventud 34" class="w-full h-full object-cover">
+                                <img src="img/imagen35.png" alt="Juventud 35" class="w-full h-full object-cover">
+                                <img src="img/imagen36.png" alt="Juventud 36" class="w-full h-full object-cover">
+                                <img src="img/imagen37.png" alt="Juventud 37" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] text-sky-400 font-mono block">Ref: 4.7 | 13 de Diciembre
+                                2025</span>
+                            <h4 class="font-bold text-xl text-white">Cena de Fin de Año - Jóvenes</h4>
+                            <p class="text-xs text-slate-400">Cierre e integración anual del ministerio de jóvenes de la
+                                asociación.</p>
+
+                            <button
+                                class="accordion-btn flex items-center justify-between w-full text-left text-xs font-semibold text-sky-300 hover:text-sky-400 pt-2 border-t border-slate-700"
+                                type="button">
+                                <span>Ver Detalles de Cierre</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content text-xs text-slate-300 space-y-1">
+                                <p><strong>Descripción:</strong> Espacio de comunión fraternal, integración colectiva y
+                                    devocional de acción de gracias basado en el <strong>Salmo 100</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO / PIE DE PÁGINA -->
+    <footer id="contacto" class="bg-white text-slate-800 border-t border-slate-200 py-8 px-4">
+        <div class="w-full grid md:grid-cols-2 gap-16 items-start justify-items-center text-center reveal-bottom">
+            <div class="space-y-6">
+                <h4 class="font-bold text-xl text-blue-950">Contacto</h4>
+                <div class="flex flex-wrap gap-12 pt-2 justify-center">
+                    <a href="mailto:cocdi626@gmail.com"
+                        class="flex flex-col items-center w-16 h-16 rounded-full bg-slate-100 justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"
+                        aria-label="Correo electrónico">
+                        <i class="fa-solid fa-envelope text-2xl"></i>
+                        <span class="mt-1 text-xs">cocdi626@gmail.com</span>
+                    </a>
+                    <a href="tel:3232271965"
+                        class="flex flex-col items-center w-16 h-16 rounded-full bg-slate-100 justify-center text-green-600 hover:bg-green-600 hover:text-white transition-all"
+                        aria-label="Teléfono">
+                        <i class="fa-solid fa-phone text-2xl"></i>
+                        <span class="mt-1 text-xs">3232271965</span>
+                    </a>
+                    <a href="https://wa.me/573232271965"
+                        class="flex flex-col items-center w-16 h-16 rounded-full bg-slate-100 justify-center text-green-500 hover:bg-green-500 hover:text-white transition-all"
+                        aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span class="mt-1 text-xs">WhatsApp</span>
+                    </a>
+                    <a href="https://www.facebook.com/templounido" target="_blank" aria-label="Facebook Templo Unido"
+                        class="flex flex-col items-center w-16 h-16 rounded-full bg-slate-100 justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all">
+                        <i class="fa-brands fa-facebook-f text-2xl"></i>
+                        <span class="mt-1 text-xs">Templo Unido</span>
+                    </a>
+                    <a href="https://www.facebook.com/dejandohuellasco626" target="_blank"
+                        aria-label="Facebook Dejando Huellas"
+                        class="flex flex-col items-center w-12 h-12 rounded-full bg-slate-100 justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-all">
+                        <i class="fa-brands fa-facebook text-xl"></i>
+                        <span class="mt-1 text-xs">Dejando Huellas</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="font-bold text-xl text-blue-950">Ubicación</h4>
+                <p class="text-sm text-slate-600 flex items-start leading-loose">
+                    <i class="fa-solid fa-location-dot text-brandRed text-lg mr-3 mt-1"></i>
+                    <a href="https://www.google.com/maps/place/Iglesia+Templo+Unido/@8.727466,-75.8927271,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgICum4ieggE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAPNQkAEEaMLMZwjsS9zs4Wn73sf4Vtw4KwzRdd7OOlTmCIdhFSuaUxQH4iXJYsSCt2uZw3_wZd2Xetlen1_r6VmNmHYTr84iIcFvFYgsp1VqVD2zCnGRtov3VWOwzDt6Qf9u3Sso5A6Z%3Dw114-h86-k-no!7i3264!8i2448!4m7!3m6!1s0x8e5a319987e8053f:0xe08a2f34bca6e569!8m2!3d8.7274017!4d-75.8927272!10e5!16s%2Fg%2F11t9cj5xp3?entry=ttu&amp;g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" rel="noopener">Calle. 6e Sur #8f-28,<br>Sur - Montería, Colombia</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto text-center text-xs text-slate-400 border-t border-slate-100 pt-8 mt-12">
+            © 2026 Asociación Cristiana para el Servicio hacia la Comunidad y la Iglesia Evangélica Templo Unido
+        </div>
+    </footer>
+
+    <!-- LOGICA JAVASCRIPT ANIMACIONES Y ACORDEÓN INTERACTIVO -->
+    <script>
+        // Manejo del Menú Responsivo Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al dar clic en enlaces
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // LÓGICA DE COMPONENTES DESPLEGABLES (ACCORDIONS)
+        const accordionButtons = document.querySelectorAll('.accordion-btn');
+
+        accordionButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+
+                // Alternar la clase open para transición CSS fluida
+                content.classList.toggle('open');
+
+                // Rotar icono
+                if (content.classList.contains('open')) {
+                    icon.classList.add('rotate-180');
+                    this.classList.add('text-blue-600', 'text-sky-300'); // Adapta color activo según fondo
+                } else {
+                    icon.classList.remove('rotate-180');
+                    this.classList.remove('text-blue-600', 'text-sky-300');
+                }
+            });
+        });
+
+        // Configuración de ScrollReveal (Animaciones de entrada)
+        ScrollReveal({
+            reset: false,
+            distance: '40px',
+            duration: 1000,
+            delay: 100
+        });
+
+        ScrollReveal().reveal('.reveal-left', { origin: 'left' });
+        ScrollReveal().reveal('.reveal-right', { origin: 'right' });
+        ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom', interval: 80 });
+    </script>
+
+
+</body>
+
+</html>
